@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-cream text-espresso antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-caramel ring-offset-2 ring-offset-cream;
+  }
+}
+
+@layer components {
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn-base bg-espresso text-cream px-6 py-3 hover:bg-coffee shadow-soft hover:shadow-soft-lg active:scale-[0.98];
+  }
+
+  .btn-accent {
+    @apply btn-base bg-caramel text-white px-6 py-3 hover:bg-caramel-dark shadow-soft hover:shadow-soft-lg active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply btn-base border border-espresso/20 text-espresso px-6 py-3 hover:bg-espresso hover:text-cream active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply btn-base text-espresso px-4 py-2 hover:bg-espresso/5 active:scale-[0.98];
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .btn-danger {
+    @apply btn-base bg-red-600 text-white px-6 py-3 hover:bg-red-700 shadow-soft active:scale-[0.98];
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-espresso/15 bg-white px-4 py-3 text-espresso placeholder:text-muted transition-colors duration-200 focus:border-caramel;
+  }
+
+  .card {
+    @apply rounded-2xl bg-white shadow-card;
+  }
+
+  .badge-base {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 36, 24, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 36, 24, 0.35);
+}
